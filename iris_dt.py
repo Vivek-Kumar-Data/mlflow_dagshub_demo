@@ -7,12 +7,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score,confusion_matrix
 import matplotlib.pyplot as plt
 
+import dagshub
+dagshub.init(repo_owner='Vivek-Kumar-Data', repo_name='mlflow_dagshub_demo', mlflow=True)
+
 # setting the name of the experiment
 mlflow.set_experiment('iris_dt')
 
 # adding this code to set our own machine : mlflow tracking server
 # this will convert the : file://... ---> http://.....
-mlflow.set_tracking_uri("http://127.0.0.1:5000")
+mlflow.set_tracking_uri("https://dagshub.com/Vivek-Kumar-Data/mlflow_dagshub_demo.mlflow")
 
 # Loading Iris Dataset
 iris = load_iris()
